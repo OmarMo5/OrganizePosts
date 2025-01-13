@@ -1,2 +1,2 @@
-# Store-eCommerce website
-Responsive design for Store-eCommerce.
+# OrganizePosts website
+Responsive design for OrganizePosts.
