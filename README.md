@@ -35,7 +35,7 @@
 - web server like (Xampp,Nginx) to start (Apche and MySQL)
 - Run (php artisan serv)
 - Run 
-    1- php artisan migrate (to build your DB in phpmyadmin)
-    2- composer dump-autoload
-    3- php artisan db:seed (to create fake data to test)
+    - php artisan migrate (to build your DB in phpmyadmin)
+    - composer dump-autoload
+    - php artisan db:seed (to create fake data to test)
 
