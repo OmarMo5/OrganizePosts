@@ -6,11 +6,8 @@
     <title>Div.Io Application</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        .active{
-            font-weight:bolder;
-        }
     </style>
-
+    <link href="{{asset('dashboard')}}/css/styles.css" rel="stylesheet" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -21,23 +18,30 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item @if(request()->is('/')) active @endif">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link px-lg-3 py-3 py-lg-4" id="theme-toggle" class="theme-toggle-btn" href="#">
+                            <img src="{{asset('front')}}/assets/img/day-and-night.jpg"/>
+                        </a>
+                    </li>
+
+                    <li class="nav-item mdT @if(request()->is('/')) active @endif">
                         <a class="nav-link" aria-current="page" href="{{url('/')}}">Home</a>
                     </li>
                     @auth
-                        <li class="nav-item @if(request()->is('posts*')) active @endif">
+                        <li class="nav-item mdT @if(request()->is('posts*')) active @endif">
                             <a class="nav-link" href="{{url('posts/showAll')}}">Posts</a>
                         </li>
-                        <li class="nav-item @if(request()->is('users*')) active @endif">
+                        <li class="nav-item mdT @if(request()->is('users*')) active @endif">
                             <a class="nav-link" href="{{url('users/showUser')}}">Users</a>
                         </li>
-                        <li class="nav-item @if(request()->is('tags*')) active @endif">
+                        <li class="nav-item mdT @if(request()->is('tags*')) active @endif">
                             <a class="nav-link" href="{{url('tags/showTag')}}">Tags</a>
                         </li>
-                        <li class="nav-item @if(request()->is('ajaxtags*')) active @endif">
+                        <li class="nav-item mdT @if(request()->is('ajaxtags*')) active @endif">
                             <a class="nav-link" href="{{url('ajaxtags/showTag')}}">Ajax-Tags</a>
                         </li>
-                        <li class="nav-item @if(request()->is('setting*')) active @endif">
+                        <li class="nav-item mdT @if(request()->is('setting*')) active @endif">
                             <a class="nav-link" href="{{url('setting/edit')}}">Setting</a>
                         </li>
                     @endauth
@@ -93,6 +97,7 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
             crossorigin="anonymous">
     </script>
+    <script src="{{asset('dashboard')}}/js/script.js"></script>
 
     @yield('script')
 

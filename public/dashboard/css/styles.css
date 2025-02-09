@@ -1,0 +1,27 @@
+/* Default light theme */
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Dark theme styles */
+body.dark {
+    background-color: #121212;
+    color: #646161;
+}
+
+.active{
+    font-weight:bolder;
+}
+
+ul #theme-toggle img{
+    width: 30px;
+    height: 30px;
+    background-color:#fff;
+    border-radius:10px;
+    margin-top: 0%;
+}
+
+ul .mdT{
+    margin-top: 15px;
+}

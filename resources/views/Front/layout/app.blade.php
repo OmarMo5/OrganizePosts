@@ -27,27 +27,27 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link px-lg-3 py-3 py-lg-4 @if(request()->is('/')) text-info @endif"
+                            <a class="nav-link mdT px-lg-3 py-3 py-lg-4 @if(request()->is('/')) text-info @endif"
                                 href="{{route('Front.home')}}">Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-lg-3 py-3 py-lg-4 @if(request()->is('about')) text-info @endif" 
+                            <a class="nav-link mdT px-lg-3 py-3 py-lg-4 @if(request()->is('about')) text-info @endif" 
                                 href="{{route('Front.about')}}">About
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-lg-3 py-3 py-lg-4 @if(request()->is('contact')) text-info @endif" 
+                            <a class="nav-link mdT px-lg-3 py-3 py-lg-4 @if(request()->is('contact')) text-info @endif" 
                                 href="{{route('Front.contact')}}">Contact
                             </a>
                         </li>
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('login')}}">Login</a>
+                                <a class="nav-link mdT px-lg-3 py-3 py-lg-4" href="{{route('login')}}">Login</a>
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link px-lg-3 py-3 py-lg-4 text-danger" href="{{route('posts.showAll')}}">Dashboard</a>
+                                <a class="nav-link mdT px-lg-3 py-3 py-lg-4 text-danger" href="{{route('posts.showAll')}}">Dashboard</a>
                             </li>
                         @endguest
                         <li class="nav-item lang">
@@ -55,11 +55,22 @@
                             <a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url('lang/'.$locale)}}">
                                 @if($locale==='en')
                                     {{App::setLocale('fr')}}
-                                    <span>{{App::getLocale()}}</span>
+                                    <span>
+                                        {{App::getLocale()}}
+                                        <img src="{{asset('front')}}/assets/img/linguistics.jpg"/>
+                                    </span>
                                 @elseif($locale==='fr')
                                     {{App::setLocale('en')}}
-                                    <span>{{App::getLocale()}}</span>
+                                    <span>
+                                        {{App::getLocale()}}
+                                        <img src="{{asset('front')}}/assets/img/linguistics.jpg"/>
+                                    </span>
                                 @endif
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-lg-3 py-3 py-lg-4" id="theme-toggle" class="theme-toggle-btn" href="#">
+                                <img src="{{asset('front')}}/assets/img/day-and-night.jpg"/>
                             </a>
                         </li>
                     </ul>

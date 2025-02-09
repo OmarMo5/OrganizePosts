@@ -7,6 +7,11 @@ window.addEventListener('DOMContentLoaded', () => {
     let scrollPos = 0;
     const mainNav = document.getElementById('mainNav');
     const headerHeight = mainNav.clientHeight;
+
+    //To create Theme
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
     window.addEventListener('scroll', function() {
         const currentTop = document.body.getBoundingClientRect().top * -1;
         if ( currentTop < scrollPos) {
@@ -25,5 +30,23 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
         scrollPos = currentTop;
+    });
+
+        //To create Theme
+    // Set theme based on local storage or default
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark');
+    } else {
+        body.classList.remove('dark');
+    }
+    // Toggle theme on button click
+    toggleButton.addEventListener('click', function () {
+        if (body.classList.contains('dark')) {
+            body.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        }
     });
 })
